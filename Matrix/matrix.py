@@ -108,8 +108,17 @@ def add(lhs, rhs):
     return res
 
 def sub(lhs, rhs):
-    # Implement
-    pass
+    if len(lhs) == 0 or len(rhs) == 0 \
+        or (len(lhs) != len(rhs)) or (len(lhs[0]) != len(rhs[0])):
+        return None # sad part first
+       
+    res = []
+    for i in range(len(lhs)):
+        row = []
+        for j in range(len(lhs[0])):
+            row.append(lhs[i][j] - rhs[i][j])
+        res.append(row)
+    return res
     
 def transpose(mat):
     trans = []
